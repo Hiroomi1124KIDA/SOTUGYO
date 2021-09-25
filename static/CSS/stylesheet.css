@@ -1,0 +1,21 @@
+.header-container {
+    background-color: #89734E;
+    width: 428px;
+    height: 77px;
+}
+
+.main-container {
+    background-color: #E8DCC5;
+    width: 428px;
+    height: 780px;
+}
+
+.footer-container {
+    background-color: #89734E;
+    width: 428px;
+    height: 77px;
+}
+
+.collapsible {
+    width: 428px;  
+}
