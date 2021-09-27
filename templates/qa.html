@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--viewportの設定 p.128-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" media="screen and ( min-width:769px )" href="../static/CSS/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen and ( max-width:768px )" href="../static/CSS/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../static/js/sg.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="header-container">ここはヘッダー</div>
+    </header>
+    
+    <div class="faq-wrapper">
+        <div class="container">
+            <div class="heading">
+                <h2>FAQ</h2>
+            </div>
+            <div class="faq">
+                <ul id="faq-list">
+                    <li class="faq-list-item">
+                        <h3 class="question">一年生雑草と多年生雑草の違い</h3>
+                        <span>+</span>
+                        <div class="answer">
+                            <p>一年生雑草は毎年新しく発芽してくる雑草を指し、夏生と冬生があります。開花したのち、種子を風や虫に運ばれやがて枯れるのが一つのサイクルですが、新たな種子がその運ばれた場所で次の季節に発芽してきます。この世代交代を断つためには草が種子を作ってしまう前、開花直後ぐらいまでを目安に草刈りをするか、除草剤で枯らしておく必要があります。<br>多年生雑草は表面上は一旦枯れたように見えても地下茎や球根が生き残っていて、翌年同じところから生えてくる宿根草です。 多年生雑草は防除が難しいため、地上面だけでなく根まで抜き取るか除草剤で枯らす必要があります。状況により１回の除草剤散布では枯らし切れないこともありますが、草が成長し背丈が高くなる前に対処しておくと次回以降の作業負担が減少します。</p>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="question">代表的な一年生雑草と多年生雑草</h3>
+                        <span>+</span>
+                        <div class="answer">
+                            <p>代表的な一年生雑草にはオヒシバ、メヒシバ、エノコログサ（ネコジャラシ）、ブタクサなどがあります。<br>代表的な多年生雑草にはドクダミ、オオバコ、タンポポ、カタバミなどがあります。</p>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="question">除草に適した時期および注意点（手作業の場合）</h3>
+                        <span>+</span>
+                        <div class="answer">
+                            <p>夏生一年生雑草は秋には種子が飛散するため、春先～初夏まで。冬生一年生雑草は秋のうちに刈り取っておくことがポイントです。<br>多年生雑草は成長し生い茂る前に根の先まで抜き取ることがポイントです。手作業の場合は、雨上がりや雨の降った翌日が作業に適しています。</p>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="question">農薬（除草剤）を使用する際の注意点</h3>
+                        <span>+</span>
+                        <div class="answer">
+                            <p>除草剤を使用する場合は製品ラベル等の記載事項をよく読み、適用範囲以外の使用をしないようにしてください。</p>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="question">除草に適した時期および注意点（除草剤使用の場合）</h3>
+                        <span>+</span>
+                        <div class="answer">
+                            <p>手作業の際と同様に各雑草に合った時期の散布（※除草に適した時期および注意点（手作業の場合）参照）や、伸びすぎた雑草はある程度刈り込んだ上での散布の方が効果的です。<br>散布後６時間以内の降雨は効果を低下させることがあります。風もなく、雨も降りそうにないお天気の日を選んでの散布をお勧めします。</p>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="question">風のある日の除草剤散布はなぜやめたほうがよいのか</h3>
+                        <span>+</span>
+                        <div class="answer">
+                            <p>風により思いがけず方々に飛散した液が作物に直接かかった場合、作物を枯らす可能性があること。枯れなかった作物でも、農薬の残留基準値に抵触することがあることなどの理由からです。伸びすぎて背の高くなった雑草はある程度刈り込んだ上で、ひざ下ぐらいを目安に低めに万遍なく雑草に噴霧していきましょう。</p>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="question">製品ラベルによく書いてある基準値１０ａ（アール）について</h3>
+                        <span>+</span>
+                        <div class="answer">
+                            <p>農地に関して数値で表す場合、以前は田んぼ一枚（一反）が基準となって様々な使われ方をしていました。しかし現在ではこれらを規定していた尺貫法という法律が廃止されたため、公的な統計には反などを用いることができなくなりました。そのため、反の名残り・代替として近似した単位の１０ａがよく用いられるようになった経緯があります。反は厳密には９９１．７４㎡（平米）、１０ａは１０００㎡（平米）です。</p>
+                        </div>
+                    </li>
+                    <li class="faq-list-item">
+                        <h3 class="question">希釈水に使用する水について</h3>
+                        <span>+</span>
+                        <div class="answer">
+                            <p>綺麗な水を使用してください。不純物が混ざると本来の効果が低下するおそれがあります。</p>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">ここはヘッダー</div>
+    </footer>
+
+</body>
+</html>
