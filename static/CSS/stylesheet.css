@@ -1,24 +1,44 @@
 .header-container {
-    background-color: #89734E;
-    width: 428px;
+    background-color: #67be8d;
+    width: 100%;
     height: 77px;
 }
 
+.main {
+    text-align: center;
+}
+
+.img {
+    height: 0px;
+
+}
+
+.acodion {
+    padding: 100px 100px 0 100px;
+}
+
+.BAIRITU {
+    padding: 0px 100px 0 100px;
+    
+}
+
 .main-container {
-    background-color: #E8DCC5;
-    width: 428px;
+    background-color: #98ce97;
+    width: 100%;
     height: 780px;
+    margin: 0 auto
 }
 
 .footer-container {
-    background-color: #89734E;
-    width: 428px;
+    background-color: #67be8d;
+    width: 100%;
     height: 77px;
 }
 
 .collapsible {
-    width: 428px;
+    width: 100%;
 }
+
 
 /*faq wrapper*/
 .faq-wrapper {
@@ -62,3 +82,8 @@
     display: none;
 }
 
+.nav-wrapper {
+    background-color: #05966a;
+}
+
+/*faq wrapper*/
