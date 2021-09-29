@@ -11,21 +11,21 @@ def top2():
     #データベースの中身を確認できるようにする
         c = conn.cursor()
     #SQL文の実行 テーブルに格納されたデータの取得,SELECT カラム名1, カラム名2, ... FROM テーブル名;
-        c.execute("select id,薬剤名 from med")
+        c.execute("select id,yakuzai from med")
     #取ってきた薬剤名を回収
         yakuzai_list=[]
         for row in c.fetchall():
-            yakuzai_list.append({"id":row[0],"薬剤名":row[1]})
+            yakuzai_list.append({"id":row[0],"yakuzai":row[1]})
         c.close()
         return render_template("top2.html", yakuzai_list= yakuzai_list)
 
 @app.route('/top2', methods= ['POST'])
 def top2_post():
         #入力フォームに入れられた、データを取得
-        Agricultural_chemicals_used= request.form.get('yakuzai["薬剤名"]')
+        Agricultural_chemicals_used= request.form.get('yakuzai["yakuzai"]')
         conn = sqlite3.connect('herbicide.db')
         c = conn.cursor()
-        c.execute("select 散布量 from med where 薬剤名= ?", (Drug_name))
+        c.execute("select Spray_amount from med where yakuzai= ?", (Drug_name))
         #散布量取得
         Spray_amount= c.fetchone()
         conn.close()
@@ -42,7 +42,7 @@ def edit_post(id):
     #データベースの中身を確認できるようにする
     c = conn.cursor()
     #SQL文の実行 テーブルに格納されたデータの取得,SELECT カラム名1, カラム名2, ... FROM テーブル名;
-    c.execute("select 希釈倍率 from med where id=?",(id,))
+    c.execute("select magnification from med where id=?",(id,))
     #取ってきたidを回収
     #倍率
     magnification= c.fetchone()
