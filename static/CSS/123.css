@@ -1,0 +1,451 @@
+@charset 'utf-8';
+
+/* css reset(各ブラウザで指定されているスタイルを初期化)と全体設定 */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+input,
+textarea,
+p,
+th,
+td,
+img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+/*ボックスのはみ出し部分を非表示＆画面いっぱいにしてみたよ*/
+html,
+body,
+.container,
+.content-wrap {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #98ce97;
+    color: #333;
+    font-size: 75%;
+    font-family: "Hiragino Kaku Gothic Pro";
+    line-height: 1;
+}
+/*リストマーカー指定しないよ*/
+ol,
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+/*はみ出た部分の表示をスクロール表示*/
+.content-wrap {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+/*アスタリスクはすべての要素にスタイルを適用、beforeは要素の先頭にafterは後方に擬似要素を作成*/
+/*border-boxはパディングとボーダーを幅と高さに含める*/
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*カーソルを指先マークに指定してみたよ*/
+button {
+    cursor: pointer;
+}
+button:focus {
+    outline: none;
+}
+
+/*header*/
+
+header {
+    margin: 130px auto 20px;
+    text-align: center;
+}
+ /*emはフォントの高さを１とした相対指定*/
+header h1 {
+    font-size: 5em;
+    font-family: 'Mrs Sheppards', cursive;
+    /*フォントの種類指定(左から優先順位)*/
+}
+
+
+
+.toppage {
+    margin-top: 300px;
+}
+
+
+
+/*メインの内容*/
+
+article {
+    width: 800px;
+    margin: 100px auto;
+}
+
+article h2 {
+    margin-bottom: 30px;
+    font-weight: normal;
+    font-size: 3em;
+    font-family: 'Mrs Sheppards', cursive;
+    text-align: center;
+}
+
+article li {
+    font-size: 2em;
+    line-height: 50px;
+}
+
+article a {
+    color: #333;
+}
+
+article a:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    text-decoration: none;
+}
+
+/*除草作業ポイント部分 .faq-wrapper～.answer(qa.html)*/
+.faq-wrapper {
+    width: 375px;
+    text-align: center;
+    padding-bottom: 80px;
+    color: #5f5d60;
+}
+
+#faq-list {
+    
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.faq-list-item {
+    margin: 10px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-list-item h3 {
+    font-size: 14px;
+}
+
+.faq-list-item span {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    color: #ccc;
+    font-size: 13px;
+}
+
+.answer {
+    font-size: 15px;
+    padding: 5px 0px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*ここからレスポンシブ設定*/
+
+@media screen and (max-width: 768px) {
+    .content-wrap {
+        width: 100%;
+        padding: 0 30px;
+        position: relative;
+    }
+
+    header {
+        margin: 70px auto 20px;
+    }
+    /*emはフォントの高さを１とした相対指定*/
+    header h1 {
+        font-size: 2em;
+    }
+
+    .toppage {
+        margin-top: 200px;
+    }
+
+    /*メインの内容*/
+
+    article {
+        margin-top: 100px;
+        width: 100%;
+    }
+
+    article h2 {
+        margin-bottom: 30px;
+        font-weight: normal;
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    article li {
+        font-size: 1.2em;
+        line-height: 30px;
+    }
+
+    #nav {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #e8d3d1;
+    outline: none;
+}
+
+/* Menu Button */
+.menu-button {
+    position: fixed;
+    z-index: 1000;
+    margin: 1em;
+    padding: 0;
+    width: 2.5em;
+    height: 2.25em;
+    border: none;
+    text-indent: 2.5em;
+    font-size: 1.5em;
+    color: transparent;
+    background: transparent;
+}
+
+.menu-button::before {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    bottom: 0.5em;
+    left: 0.5em;
+    background: linear-gradient(#373a47 20%, transparent 20%, transparent 40%, #373a47 40%, #373a47 60%, transparent 60%, transparent 80%, #373a47 80%);
+    background: -webkit-linear-gradient(#373a47 20%, transparent 20%, transparent 40%, #373a47 40%, #373a47 60%, transparent 60%, transparent 80%, #373a47 80%);
+    content: '';
+}
+
+.menu-button:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+}
+
+/* Close Button */
+.close-button {
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    overflow: hidden;
+    text-indent: 1em;
+    font-size: 0.75em;
+    border: none;
+    background: transparent;
+    color: transparent;
+}
+
+.close-button::before,
+.close-button::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    background: #bdc3c7;
+}
+
+.close-button::before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.close-button::after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+/* Menu */
+.menu-wrap {
+    position: absolute;
+    z-index: 1001;
+    width: 300px;
+    height: 100%;
+    background: #373a47;
+    padding: 5em 1.5em 0;
+    font-size: 1.15em;
+    -webkit-transform: translate3d(-320px, 0, 0);
+    transform: translate3d(-320px, 0, 0);
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.menu,
+.icon-list {
+    height: 100%;
+}
+
+.icon-list {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+}
+
+.icon-list a {
+    display: block;
+    padding: 0.8em;
+    -webkit-transform: translate3d(0, 500px, 0);
+    transform: translate3d(0, 500px, 0);
+}
+
+.icon-list,
+.icon-list a {
+    -webkit-transition: -webkit-transform 0s 0.4s;
+    transition: transform 0s 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.icon-list a:nth-child(2) {
+    -webkit-transform: translate3d(0, 1000px, 0);
+    transform: translate3d(0, 1000px, 0);
+}
+
+.icon-list a:nth-child(3) {
+    -webkit-transform: translate3d(0, 1500px, 0);
+    transform: translate3d(0, 1500px, 0);
+}
+
+.icon-list a:nth-child(4) {
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+}
+
+.icon-list a:nth-child(5) {
+    -webkit-transform: translate3d(0, 2500px, 0);
+    transform: translate3d(0, 2500px, 0);
+}
+
+.icon-list a:nth-child(6) {
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+}
+
+.icon-list a span {
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+/* Shown menu */
+.show-menu .menu-wrap {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.8s;
+    transition: transform 0.8s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.show-menu .icon-list,
+.show-menu .icon-list a {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.8s;
+    transition: transform 0.8s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.show-menu .icon-list a {
+    -webkit-transition-duration: 0.9s;
+    transition-duration: 0.9s;
+}
+
+.show-menu .content::before {
+    opacity: 1;
+    -webkit-transition: opacity 0.8s;
+    transition: opacity 0.8s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+@media screen and (max-width: 480px) {
+    .menu-wrap {
+        position: absolute;
+        z-index: 1001;
+        width: 100%;
+        height: 100%;
+        background: #373a47;
+        padding: 4em 1.5em 0;
+        font-size: 1.5em;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+        -webkit-transition: -webkit-transform 0.4s;
+        transition: transform 0.4s;
+        -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+        transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    }
+}
+   
