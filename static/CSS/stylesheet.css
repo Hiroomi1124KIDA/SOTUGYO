@@ -1,44 +1,63 @@
+/*共通*/
 .header-container {
     background-color: #67be8d;
-    width: 100%;
+    width: 436px;
     height: 77px;
 }
 
-.main {
-    text-align: center;
+.logo {
+    text-align: left;
 }
-
-.img {
-    height: 0px;
-
-}
-
-.acodion {
-    padding: 100px 100px 0 100px;
-}
-
-.BAIRITU {
-    padding: 0px 100px 0 100px;
-    
-}
-
-.main-container {
-    background-color: #98ce97;
-    width: 100%;
-    height: 780px;
-    margin: 0 auto
-}
-
 .footer-container {
     background-color: #67be8d;
     width: 100%;
     height: 77px;
+    text-align: center;
+    font-size: 25px;
 }
 
-.collapsible {
+.body {
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #98ce97;
     width: 100%;
+    height: 618px;
+    text-align: center;
+    font-family: sans-serif;
 }
 
+/*top-pege*/
+.acodion {
+    margin: 10px auto;
+    width: 450px;
+    background: orange;
+}
+
+.BAIRITU {
+    margin: 10px auto;
+    width: 450px;
+    /*background: orange;*/
+}
+
+.header-container {
+    background-color: #67be8d;
+    width: 436px;
+    height: 77px;
+
+}
+
+.body {
+    background-color: #98ce97;
+    width: 100%;
+    height: 618px;
+    text-align: center;
+}
+
+.textarea {
+    margin: 10px auto;
+    width: 450px;
+    text-align: center;
+}
 
 /*faq wrapper*/
 .faq-wrapper {
@@ -87,3 +106,10 @@
 }
 
 /*faq wrapper*/
+
+/* page-2*/
+.nyuryoku {
+    margin: 10px auto;
+    width: 450px;
+}
+
