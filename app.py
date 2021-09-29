@@ -4,7 +4,11 @@ from flask import Flask , render_template, request
 
 app = Flask(__name__)
 
+<<<<<<< HEAD
+@app.route('/top', methods= ['GET'])
+=======
 @app.route('/top2', methods= ['GET'])
+>>>>>>> main
 def top2():
     #データベースに接続
         conn = sqlite3.connect('herbicide.db')
@@ -17,9 +21,15 @@ def top2():
         for row in c.fetchall():
             yakuzai_list.append({"id":row[0],"yakuzai":row[1]})
         c.close()
+<<<<<<< HEAD
+        return render_template("top.html", yakuzai_list= yakuzai_list)
+
+@app.route('/top', methods= ['POST'])
+=======
         return render_template("top2.html", yakuzai_list= yakuzai_list)
 
 @app.route('/top2', methods= ['POST'])
+>>>>>>> main
 def top2_post():
         #入力フォームに入れられた、データを取得
         Agricultural_chemicals_used= request.form.get('yakuzai["yakuzai"]')
@@ -42,7 +52,11 @@ def edit_post(id):
     #データベースの中身を確認できるようにする
     c = conn.cursor()
     #SQL文の実行 テーブルに格納されたデータの取得,SELECT カラム名1, カラム名2, ... FROM テーブル名;
+<<<<<<< HEAD
+    c.execute("select 希釈倍率 from med where id=?",(id,))
+=======
     c.execute("select magnification from med where id=?",(id,))
+>>>>>>> main
     #取ってきたidを回収
     #倍率
     magnification= c.fetchone()
