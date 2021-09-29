@@ -50,14 +50,10 @@
           <div class="collapsible-header">使用薬剤名</div>
           <div class="collapsible-body">
             <ul>
-              <li>もに</li>
-              <li>もに</li>
-              <li>もに</li>
-              <li>もに</li>
-              <li>もに</li>
-
-            </ul>
-
+              {% for yakuzai in  kusuri_list %}
+              <li><a href="/edit/{{yakuzai['id']}}">{{yakuzai["id"]}}{{yakuzai["薬剤名"]}}</a></li>
+              {% endfor %}
+          </ul>
           </div>
         </li>
       </ul>
