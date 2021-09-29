@@ -6,25 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../static/stylesheet.css">
-
+  <link rel="stylesheet" href="../static/CSS/stylesheet.css">
+  
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
   <!-- Compiled and minified JavaScript -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-
   <script type="text/javascript" src="../static/js/sg.js"></script>
-  <link rel="stylesheet" href="../static/CSS/stylesheet.css">
 
 </head>
 
 <body>
-  <div class="body">
+  <div class="bod">
     <header>
-      
+
       <nav>
         <div class="nav-wrapper">
           <a href="#" class="brand-logo"></a>
@@ -50,14 +47,10 @@
           <div class="collapsible-header">使用薬剤名</div>
           <div class="collapsible-body">
             <ul>
-              <li>もに</li>
-              <li>もに</li>
-              <li>もに</li>
-              <li>もに</li>
-              <li>もに</li>
-
-            </ul>
-
+              {% for yakuzai in  kusuri_list %}
+              <li><a href="/edit/{{yakuzai['id']}}">{{yakuzai["id"]}}{{yakuzai["薬剤名"]}}</a></li>
+              {% endfor %}
+          </ul>
           </div>
         </li>
       </ul>
@@ -65,7 +58,7 @@
     <div>
       <p><input type="button" value="確認する" id="button2"></p>
     </div>
-    <div class="BAIRITU">
+    <div class="bairitsu">
       <div class="main-container">
         <p>希釈倍率<br>
           <input type="text"></p>
@@ -76,21 +69,28 @@
     </div>
   </div>
 
-  <div class="textarea">
-    <h3> One Point</h3>
-    <textarea>
 
-    </textarea>
+  <!--ここからランダム表示-->
+  <div class="test">イネ科雑草は根元の成長点より下を意識して草刈りしてみよう！</div>
+  <div class="test">地下茎雑草は野菜より強力だから根っこごと抜こう！</div>
+  <div class="test">防草シートには環境にやさしい天然素材製品も増えてきているよ！</div>
+  <div class="test">快晴が続く時は作業の１～２時間前に水を撒くと楽になる！</div>
+  <div class="test">根の浅い雑草には家庭にある酢の原液を霧吹きしても撃退効果があるよ！</div>
 
-  </div>
+  <style type="text/css">
+    .test {
+      display: none;
+    }
+  </style>
 
-  <footer>
-    <div class="footer-container">
-      <a href="/templates/first.html">初めての方へ</a>
-    </div>
-  </footer>
+  <script type="text/javascript">
+    var target = document.getElementsByClassName("test");
+
+    var rNo = Math.floor(Math.random() * target.length);
+
+    target[rNo].style.display = "block";
+  </script>
 
 </body>
-</div>
 
 </html>

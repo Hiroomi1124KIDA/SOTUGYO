@@ -50,10 +50,19 @@
             <div class="nyuryoku">
                 <h3>散布面積</h3>
                 <div class="m x m">
-                   <input> 
-                   <input>
+                    {% extends 'base.html' %}
+                    {% block content %}
+                    <form action="/gopage" method="post"
+                        oninput="result.value=parseInt(num1.value) * parseInt(num2.value);">
+                        <div>
+                            <input type="number" name="num1" value="0"> *
+                            <input type="number" name="num2" value="0"> ＝ <output name="result">0</output>
+                            <input type="submit" name="save" value="決定">
+                        </div>
+                    </form>
+                    <h3>選んだ農薬の散布量{{Spray_amount}}</h3>
+                    {% endblock %}
                 </div>
-                
             </div>
 
         </div>
