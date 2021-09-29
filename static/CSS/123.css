@@ -99,6 +99,11 @@ header h1 {
 
 /*メインの内容*/
 
+/*Home部分 レスポンシブチェックまだ*/
+.content a {
+    float: right;
+}
+
 article {
     width: 800px;
     margin: 100px auto;
@@ -130,10 +135,9 @@ article a:hover {
 
 /*除草作業ポイント部分 .faq-wrapper～.answer(qa.html)*/
 .faq-wrapper {
-    width: 375px;
-    text-align: center;
-    padding-bottom: 80px;
-    color: #5f5d60;
+    width: 800px;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 100px auto;
 }
 
 #faq-list {
