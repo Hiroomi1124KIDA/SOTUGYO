@@ -113,3 +113,22 @@
     width: 450px;
 }
 
+.mxm {
+    display: flex;  
+}
+.temix {
+    padding: 10px;
+}
+
+.temix {
+    padding-left:30px;
+}
+.icon {
+    display: flex;
+    justify-content: center;
+}
+
+.mizu {
+    margin: 50px;
+    padding: 50px;
+}
