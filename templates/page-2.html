@@ -48,23 +48,19 @@
 
         <div class="SANPU1">
             <div class="nyuryoku">
-                <h3>散布面積</h3>
+                <h3>散布面積は？</h3>
                 <div class="m x m">
-                    {% extends 'base.html' %}
-                    {% block content %}
-                    <form action="/gopage" method="post"
+                    <form action="/save" method="post"
                         oninput="result.value=parseInt(num1.value) * parseInt(num2.value);">
                         <div>
                             <input type="number" name="num1" value="0"> *
                             <input type="number" name="num2" value="0"> ＝ <output name="result">0</output>
-                            <input type="submit" name="save" value="決定">
+                            <input type="submit" formaction="/page-4" value="決定">
                         </div>
                     </form>
-                    <h3>選んだ農薬の散布量{{Spray_amount}}</h3>
-                    {% endblock %}
+                    <h3>選んだ薬の散布量は、{{Spray_amount}}でした</h3>
                 </div>
             </div>
-
         </div>
         <a class="btn-floating btn-large waves-effect waves-light red">
             <i class="material-icons">決定</i></a>

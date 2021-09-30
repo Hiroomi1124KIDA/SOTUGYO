@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="../static/CSS/stylesheet.css">
-  
+
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -47,26 +47,25 @@
           <div class="collapsible-header">使用薬剤名</div>
           <div class="collapsible-body">
             <ul>
-              {% for yakuzai in  kusuri_list %}
-              <li><a href="/edit/{{yakuzai['id']}}">{{yakuzai["id"]}}{{yakuzai["薬剤名"]}}</a></li>
+              {% for yakuzai in yakuzai_list %}
+              <li><a href="/top/{{yakuzai['id']}}">{{yakuzai["id"]}}：{{yakuzai["yakuzai"]}}</a></li>
               {% endfor %}
-          </ul>
+            </ul>
           </div>
         </li>
       </ul>
     </div>
-    <div>
-      <p><input type="button" value="確認する" id="button2"></p>
+    <p><input type="button" value="確認する" id="button2"></p>
+  </div>
+  <div class="bairitsu">
+    <div class="main-container">
+      <p>希釈倍率<br>
+        <input type="text"></p>
     </div>
-    <div class="bairitsu">
-      <div class="main-container">
-        <p>希釈倍率<br>
-          <input type="text"></p>
-      </div>
-    </div>
-    <div>
-      <p><input type="button" value="確認する" id="button2"></p>
-    </div>
+  </div>
+  <div>
+    <p><input type="button" value="確認する" id="button2"></p>
+  </div>
   </div>
 
 
