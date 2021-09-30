@@ -46,14 +46,16 @@
           <div class="collapsible-header">使用薬剤名</div>
           <div class="collapsible-body">
             <ul>
-              {% for yakuzai in  kusuri_list %}
-              <li><a href="/edit/{{yakuzai['id']}}">{{yakuzai["id"]}}{{yakuzai["薬剤名"]}}</a></li>
+              {% for yakuzai in yakuzai_list %}
+              <li><a href="/top/{{yakuzai['id']}}">{{yakuzai["id"]}}：{{yakuzai["yakuzai"]}}</a></li>
               {% endfor %}
             </ul>
           </div>
         </li>
       </ul>
     </div>
+
+
     <div>
       <p><input type="button" value="確認する" id="button2"></p>
     </div>
@@ -65,7 +67,12 @@
     </div>
     <div>
       <p><input type="button" value="確認する" id="button2"></p>
+
     </div>
+  </div>
+  <div>
+    <p><input type="button" value="確認する" id="button2"></p>
+  </div>
   </div>
 
 
