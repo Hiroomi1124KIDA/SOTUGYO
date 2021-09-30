@@ -45,6 +45,13 @@ body {
     font-family: "Hiragino Kaku Gothic Pro";
     line-height: 1;
 }
+
+.first {
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+}
+
 /*リストマーカー指定しないよ*/
 ol,
 ul {
@@ -99,7 +106,7 @@ header h1 {
 
 /*メインの内容*/
 
-/*Home部分 レスポンシブチェックまだ*/
+/*first.html部分*/
 .content a {
     float: right;
 }
@@ -110,20 +117,32 @@ article {
 }
 
 article h2 {
-    margin-bottom: 30px;
-    font-weight: normal;
-    font-size: 3em;
-    font-family: 'Mrs Sheppards', cursive;
+    color: darkgreen;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 40px;
+    font-family: 'Kiwi Maru', serif;
     text-align: center;
+    line-height: 38px;
 }
 
 article li {
-    font-size: 2em;
+    font-size: 30px;
     line-height: 50px;
 }
 
 article a {
-    color: #333;
+    color: darkgreen;
+    font-family: 'Kiwi Maru', serif;
+}
+
+article p {
+    color: darkgreen;
+    font-size: 22px;
+    padding: 0px 15px 8px 15px;
+    font-weight: 500;
+    line-height: 35px;
+    margin-bottom: 15px;
 }
 
 article a:hover {
@@ -136,15 +155,8 @@ article a:hover {
 /*除草作業ポイント部分 .faq-wrapper～.answer(qa.html)*/
 .faq-wrapper {
     width: 800px;
-    font-family: 'Noto Sans JP', sans-serif;
-    margin: 100px auto;
-}
-
-#faq-list {
-    
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
+    font-family: 'Kiwi Maru', serif;
+    margin: 50px auto;
 }
 
 .faq-list-item {
@@ -152,61 +164,177 @@ article a:hover {
     border-bottom: 1px solid #ccc;
     position: relative;
     cursor: pointer;
-    text-align: left;
 }
 
-.faq-list-item h3 {
-    font-size: 14px;
+.return-top a {
+    color: darkgreen;
+    padding: 20px 50px 20px 0px;
+    margin: 20px 50px 20px 0px;
+    font-weight: max-width;
+    font-size: 4em;
+    float: right;
+    height: 20px;
 }
+
+.heading h2 {
+    color: darkgreen;
+    height: 45px;
+    font-weight: max-width;
+    font-size: 3em;
+    font-family: 'Mrs Sheppards', cursive;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
 
 .faq-list-item span {
     position: absolute;
     top: 0;
     right: 5px;
-    color: #ccc;
-    font-size: 13px;
+}
+
+.question {
+    color: darkslategrey;
+    height: 50px;
+    font-weight: max-width;
+    font-size: 20px;
+    font-family: 'Mrs Sheppards', cursive;
+    text-align: center;
+    margin-right: 20px;
 }
 
 .answer {
-    font-size: 15px;
-    padding: 5px 0px;
+    color: green;
+    font-size: 25px;
+    padding: 0px 25px 8px 25px;
+    font-weight: 500;
+    line-height: 35px;
     margin-bottom: 15px;
+    margin-right: 20px;
+    padding-right: 20px;
     display: none;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-/*ここからレスポンシブ設定*/
-
-@media screen and (max-width: 768px) {
+/*タブレット端末レスポンシブ qa.html*/
+@media screen and (max-width: 1024px) {
     .content-wrap {
         width: 100%;
-        padding: 0 30px;
+        padding: 0 7px;
         position: relative;
     }
 
     header {
         margin: 70px auto 20px;
     }
-    /*emはフォントの高さを１とした相対指定*/
+
+    /*opening.html部分*/
     header h1 {
-        font-size: 2em;
+        font-size:  4em;
+        font-family: 'Mrs Sheppards', cursive;
     }
 
     .toppage {
         margin-top: 200px;
     }
 
-    /*メインの内容*/
+    .faq-wrapper {
+        width: 100%;
+        padding: 0 30px;
+        position: relative;
+        font-family: 'Kiwi Maru', serif;
+        margin: 50px auto;
+    }
+
+    .faq-list-item {
+        margin: 5px;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .return-top a {
+        color: darkgreen;
+        padding: 10px 25px 10px 0px;
+        margin: 10px 25px 10px 0px;
+        font-weight: max-width;
+        font-size: 3em;
+        float: right;
+        height: 15px;
+    }
+
+    .heading h2 {
+        color: darkgreen;
+        height: 100px;
+        font-weight: max-width;
+        font-size: 50px;
+        font-weight: 700;
+        font-family: 'Mrs Sheppards', cursive;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+
+    .faq-list-item span {
+        position: absolute;
+        top: 0;
+        right: 5px;
+    }
+
+    .question {
+        color: darkslategrey;
+        height: 65px;
+        margin-top: 20px;
+        font-weight: max-width;
+        font-size: 35px;
+        font-family: 'Mrs Sheppards', cursive;
+        text-align: center;
+    }
+
+    .answer {
+        color: green;
+        font-size: 35px;
+        padding: 0px 5px 5px 5px;
+        font-weight: 400;
+        line-height: 35px;
+        margin: 15px 0px 15px 0px;
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+/*ここからスマホ用レスポンシブ設定*/
+
+@media screen and (max-width: 767px) {
+    .content-wrap {
+        width: 100%;
+        padding: 0 7px;
+        position: relative;
+    }
+
+    header {
+        margin: 70px auto 20px;
+    }
+
+    /*opening.html部分*/
+    header h1 {
+        font-size:  4em;
+        font-family: 'Mrs Sheppards', cursive;
+    }
+
+    .toppage {
+        margin-top: 200px;
+    }
+
+
+    /*first.html メインの内容*/
 
     article {
         margin-top: 100px;
@@ -214,9 +342,12 @@ article a:hover {
     }
 
     article h2 {
-        margin-bottom: 30px;
-        font-weight: normal;
-        font-size: 1.2em;
+        color: darkgreen;
+        font-size: 25px;
+        padding: 0px 15px 8px 15px;
+        font-weight: 500;
+        line-height: 35px;
+        margin-bottom: 15px;
         text-align: center;
     }
 
@@ -225,7 +356,79 @@ article a:hover {
         line-height: 30px;
     }
 
+    article p {
+        color: darkgreen;
+        font-size: 22px;
+        padding: 0px 15px 8px 15px;
+        font-weight: 500;
+        line-height: 35px;
+        margin-bottom: 15px;
+    }
+
     #nav {
+        display: none;
+    }
+
+
+    /*除草作業ポイント部分 .faq-wrapper～.answer(qa.html)*/
+    .faq-wrapper {
+        width: 100%;
+        padding: 0 30px;
+        position: relative;
+        font-family: 'Kiwi Maru', serif;
+        margin: 50px auto;
+    }
+
+    .faq-list-item {
+        margin: 5px;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .return-top a {
+        color: darkgreen;
+        padding: 10px 25px 10px 0px;
+        margin: 10px 25px 10px 0px;
+        font-weight: max-width;
+        font-size: 3em;
+        float: right;
+        height: 15px;
+    }
+
+    .heading h2 {
+        color: darkgreen;
+        height: 35px;
+        font-weight: max-width;
+        font-size: 2em;
+        font-family: 'Mrs Sheppards', cursive;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+
+    .faq-list-item span {
+        position: absolute;
+        top: 0;
+        right: 5px;
+    }
+
+    .question {
+        color: darkslategrey;
+        height: 65px;
+        font-weight: max-width;
+        font-size: 20px;
+        font-family: 'Mrs Sheppards', cursive;
+        text-align: center;
+    }
+
+    .answer {
+        color: green;
+        font-size: 20px;
+        padding: 0px 5px 5px 5px;
+        font-weight: 400;
+        line-height: 30px;
+        margin-bottom: 10px;
         display: none;
     }
 }
