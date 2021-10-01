@@ -1,0 +1,18 @@
+
+.zero1 {
+    width: 100%;
+}
+
+.zero2 {
+    width: 100%;
+}
+
+.main {
+    position: relative;
+}
+
+.btn {
+    position: absolute;
+    top: 7%;
+    justify-content: center;
+}

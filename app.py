@@ -4,39 +4,40 @@ from flask import Flask , render_template, request
 
 app = Flask(__name__)
 
-@app.route('/top', methods= ['GET'])
-def top2():
+#トップページを表示する。
+@app.route('/')
+def top():
     #データベースに接続
-        conn = sqlite3.connect('herbicide.db')
+    conn = sqlite3.connect('herbicide.db')
     #データベースの中身を確認できるようにする
-        c = conn.cursor()
+    c = conn.cursor()
     #SQL文の実行 テーブルに格納されたデータの取得,SELECT カラム名1, カラム名2, ... FROM テーブル名;
-        c.execute("select id,yakuzai from med")
+    c.execute("select id,yakuzai from med")
     #取ってきた薬剤名を回収
-        yakuzai_list=[]
-        for row in c.fetchall():
-            yakuzai_list.append({"id":row[0],"yakuzai":row[1]})
-        c.close()
-        return render_template("top.html", yakuzai_list= yakuzai_list)
+    yakuzai_list=[]
+    # yakuzai = c.fetchall()
+    for row in c.fetchall():
+        yakuzai_list.append({"id":row[0],"yakuzai":row[1]})
+    c.close()
+    # print(yakuzai)
+    return render_template("top.html",yakuzai_list= yakuzai_list)
+    # return 0
 
-@app.route('/top', methods= ['POST'])
-def top2_post():
-        #入力フォームに入れられた、データを取得
-        Agricultural_chemicals_used= request.form.get('yakuzai["yakuzai"]')
-        conn = sqlite3.connect('herbicide.db')
-        c = conn.cursor()
-        c.execute("select Spray_amount from med where yakuzai= ?", (Drug_name))
-        #散布量取得
-        Spray_amount= c.fetchone()
-        conn.close()
-        return render_template("edit<int:id>", kusuri_list= kusuri_list,Spray_amount= Spray_amount)
+#2ページ目に散布量を反映する。
+@app.route('/top/<int:id>',methods=['GET'])
+def top_post(id):
+    conn = sqlite3.connect('herbicide.db')
+    c = conn.cursor()
+    c.execute("select Spray_amount from med where id= ?", (id,))
+    #散布量取得
+    Spray_amount= c.fetchone()[0]
+    conn.close()
+    print(Spray_amount)
+    return render_template("page-2.html",Spray_amount= Spray_amount,id=id)
 
-@app.route('/edit/<int:id>',methods =['GET'])
-def edit(id):
-    return render_template("edit.html")
-
-@app.route('/edit<int:id>', methods =['POST'])
-def edit_post(id):
+#idを条件に倍率を調べる。2ページ目の面積の結果を4ページ目に持っていく。
+@app.route('/page-2/<int:id>')
+def page2(id):
     #データベースに接続
     conn = sqlite3.connect('herbicide.db')
     #データベースの中身を確認できるようにする
@@ -47,33 +48,68 @@ def edit_post(id):
     #倍率
     magnification= c.fetchone()
     c.close()
-    return render_template('gopage.html',magnification= magnification)
-
-@app.route("/area.html", methods=['GET'])
-def area():
-    return render_template("area.html")
-
-@app.route("/area.html", methods=['POST'])
-def area_poat():
-    Spray_area= request.form.get('Spray_area')
-    Spray_amount= request.form.get('Spray_amount')
-    return render_template("gopage.html")
-
-@app.route('/page-4<int:id>') # http://○○○/item-detail/msg1/msg2を実行した場合にこの関数が実行される
-def func(id):
-    #倍率
-    magnification= request.form.get('magnification')
-    #散布量
-    Spray_amount= request.form.get('Spray_amount')
-    #面積
     result= request.form.get('result')
+    return render_template('page-4.html',magnification= magnification,id=id,result=result)
+
+#トップページで入力した倍率を4ページ目に持っていく。
+# @app.route('/page-3')
+# def write():
+#     return render_template('page-3.html')
     
+#3ページ目で入力した面積を散布量を)4ページ目に持っていく。
+@app.route('/page-3',methods=['POST'])
+def magnification():
+    magnification= request.form.get('magnification')
+    result= request.form.get('result')
+    return render_template('page-3.html',magnification = magnification)
 
-    return 'msg1 = {}, msg2 = {}'.format(msg1, msg2)
-        
+
+#計算結果を反映するページ。
+@app.route('/page-4/<int:id>',methods=['POST'])
+def total4_post(id):
+    #希釈倍率
+    conn = sqlite3.connect('herbicide.db')
+    #データベースの中身を確認できるようにする
+    c = conn.cursor()
+    #SQL文の実行 テーブルに格納されたデータの取得,SELECT カラム名1, カラム名2, ... FROM テーブル名;
+    c.execute("select magnification from med where id=?",(id,))
+    magnification = c.fetchone()[0]
+    c.close()
+    #１０a当たり散布量
+    Spray_amount= request.form.get('Spray_amount')
+    print(Spray_amount)
+    #散布面積
+    num1 = request.form.get("num1")
+    num2 = request.form.get("num2")
+    result = int(num1) * int(num2)
+    print(result)
+    #↓それぞれの計算式↓
+    #農薬量=10a当り*面積/倍率
+    Amount_of_pesticide=int(Spray_amount)*result/int(magnification)
+    #水=面積*0.001*10a当り
+    water=(result*0.001)*int(Spray_amount)
+    return render_template("page-4.html",magnification=magnification,Spray_amount=Spray_amount,result=result,id=id,water=water,Amount_of_pesticide=Amount_of_pesticide)
 
 
-    
+@app.route('/anser',methods=['POST'])
+def anser():
+
+    magnification = request.form.get("magnification")
+    #１０a当たり散布量
+    Spray_amount= request.form.get('Spray_amount')
+    print(Spray_amount)
+    #散布面積
+    num1 = request.form.get("num1")
+    num2 = request.form.get("num2")
+    result = int(num1) * int(num2)
+    print(result)
+    #↓それぞれの計算式↓
+    #農薬量=10a当り*面積/倍率
+    Amount_of_pesticide=int(Spray_amount)*result/int(magnification)
+    #水=面積*0.001*10a当り
+    water=(result*0.001)*int(Spray_amount)
+    return render_template("page-4.html",magnification=magnification,Spray_amount=Spray_amount,result=result,id=id,water=water,Amount_of_pesticide=Amount_of_pesticide)
+
     
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
