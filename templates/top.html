@@ -55,47 +55,35 @@
       </ul>
     </div>
 
-
-    <div>
-      <p><input type="button" value="確認する" id="button2"></p>
-    </div>
     <div class="bairitsu">
       <div class="main-container">
         <p>希釈倍率</p>
-          <div class="bairitu"><input type="text" style="width:200px;" /></p></div>
+        <div class="bairitu">
+          <form action="/page-3" method="POST"><input type="text" name="magnification" style="width:200px;" />
+          <input type="submit" value="確認する"></form>
+        </div>
       </div>
-    </div>
-    <div>
-      <p><input type="button" value="確認する" id="button2"></p>
 
-    </div>
-  </div>
-  <div>
-    <p><input type="button" value="確認する" id="button2"></p>
-  </div>
-  </div>
+      <!--ここからランダム表示-->
+      <div class="test">イネ科雑草は根元の成長点より下を意識して草刈りしてみよう！</div>
+      <div class="test">地下茎雑草は野菜より強力だから根っこごと抜こう！</div>
+      <div class="test">防草シートには環境にやさしい天然素材製品も増えてきているよ！</div>
+      <div class="test">快晴が続く時は作業の１～２時間前に水を撒くと楽になる！</div>
+      <div class="test">根の浅い雑草には家庭にある酢の原液を霧吹きしても撃退効果があるよ！</div>
 
+      <style type="text/css">
+        .test {
+          display: none;
+        }
+      </style>
 
-  <!--ここからランダム表示-->
-  <div class="test">イネ科雑草は根元の成長点より下を意識して草刈りしてみよう！</div>
-  <div class="test">地下茎雑草は野菜より強力だから根っこごと抜こう！</div>
-  <div class="test">防草シートには環境にやさしい天然素材製品も増えてきているよ！</div>
-  <div class="test">快晴が続く時は作業の１～２時間前に水を撒くと楽になる！</div>
-  <div class="test">根の浅い雑草には家庭にある酢の原液を霧吹きしても撃退効果があるよ！</div>
+      <script type="text/javascript">
+        var target = document.getElementsByClassName("test");
 
-  <style type="text/css">
-    .test {
-      display: none;
-    }
-  </style>
+        var rNo = Math.floor(Math.random() * target.length);
 
-  <script type="text/javascript">
-    var target = document.getElementsByClassName("test");
-
-    var rNo = Math.floor(Math.random() * target.length);
-
-    target[rNo].style.display = "block";
-  </script>
+        target[rNo].style.display = "block";
+      </script>
 
 </body>
 

@@ -49,13 +49,14 @@
         <div class="SANPU2">
             <div class="nyuryoku">
                 <h3>散布面積</h3>
-                <div class="mxm">
-
-                    <input type="number" name="num1" value="0"> *<p>m</p>
-                    <p>✖️</p>
+                <form action="/anser" method="post" oninput="result.value=parseInt(num1.value) * parseInt(num2.value);">
+                    <div>
+                    <!-- <input type="hidden" name="id" value="{{id}}"> -->
+                    <input type="hidden" name="magnification" value="{{magnification}}">
+                    <input type="number" name="num1" value="0"> *<p>m</p>    
+                        <p>✖️</p>
                     <input type="number" name="num2" value="0"> <p>m</p>＝ <output name="result">0</output>
-
-                </div>
+                    </div>
                 <h4>1m2当たりの散布量</h4>
                 <p><input type="integer" placeholder="10aあたりの散布量" name="Spray_amount">ミリリットル</p>
                 <input type="submit" name="save" value="計算">
