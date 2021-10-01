@@ -29,18 +29,80 @@ body {
 h1,h3,h2,h4 {
     color: #005842;
 }
+
+/*top.html ランダム表示部分 .test～.pointまで*/
 .test {
-    font-family: sans-serif;
-    font-size: 20px;
     background-color: #98ce97;
     color: darkgreen;
-    width: 100%;
+    font-weight: normal;
+    font-size: 20px;
+    font-family: 'Reggae One', cursive;
     text-align: center;
-    margin-top: 100px;
-    padding: 50px 20px 0px 20px;
+    padding: 20px 20px 0px 20px;
 }
 
-/*top-pege*/
+.point {
+    color: darkgreen;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    height: 30px;
+    font-weight: normal;
+    font-size: 45px;
+    font-family: 'Mrs Sheppards', cursive;
+    text-align: center;
+}
+
+
+/*top-page*/
+
+.link a{
+    color: rgb(185, 230, 176);
+    padding: 15px 0px 0px 5px;
+    margin: 15px 0px 0px 25px;
+    font-weight: max-width;
+    font-size: 30px;
+    float: right;
+    height: 30px;
+}
+
+
+.logo {
+    font-size: 160px;
+    border-top: 100px;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.return-top a {
+    color: green;
+    padding: 10px 25px 10px 0px;
+    margin: 10px 0px 10px 350px;
+    font-weight: max-width;
+    font-size: 2em;
+    height: 15px;
+}
+
+.collapsible {
+    font-family: 'Reggae One', cursive;
+    color: darkgreen;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.collapsible-body {
+    font-size: 18px;
+}
+
+.bairitsu {
+    font-family: 'Reggae One', cursive;
+    color: darkgreen;
+    font-size: 30px;
+    text-align: center;
+    margin-right: 60px;
+}
+
+
 .acodion {
     margin: 10px auto;
     width: 450px;
@@ -123,8 +185,13 @@ h1,h3,h2,h4 {
 
 /* page-2*/
 .nyuryoku {
+    margin: 15px 25px 5px 25px ;
     margin: 10px auto;
     width: 450px;
+}
+
+.nyuryoku h3 {
+    font-family: 'Reggae One', cursive;
 }
 
 .mxm {
@@ -141,4 +208,9 @@ h1,h3,h2,h4 {
     display: flex;
     justify-content: center;
     position: relative;
+    margin: 120px 0px 0px 95px;
+}
+
+.icon-a {
+    font-family: 'Reggae One', cursive;
 }
